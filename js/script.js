@@ -23,3 +23,72 @@
 // 2. Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 // 3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 // Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
+
+/*
+const carouselImgs = document.getElementsByClassName("carousel-img");
+console.log(carouselImgs);
+
+const arrayImgs = [];
+
+for(let i = 0; i < carouselImgs.length; i++) {
+
+    console.log(carouselImgs[i].src);
+
+}
+*/
+
+const arrayImgs = ["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.jpg"];
+
+const carousel = document.getElementById("carousel");
+
+for(let i = 0; i < arrayImgs.length; i++) {
+
+    carousel.innerHTML += `<img class="carousel-img" src="${arrayImgs[i]}" alt=""></img>`;
+
+}
+
+const arrayImgTags = document.getElementsByClassName("carousel-img");
+const up = document.getElementsByClassName("up");
+const down = document.getElementsByClassName("down");
+console.log(arrayImgTags);
+console.log(up);
+console.log(down);
+
+// STATO INIZIALE
+arrayImgTags[0].classList.add("active");
+//up[0].classList.add("hidden");
+
+let imgPosition = 0;
+
+down[0].addEventListener("click", function() {
+
+    arrayImgTags[imgPosition].classList.remove("active");
+    imgPosition++;
+    arrayImgTags[imgPosition].classList.add("active");
+
+});
+
+up[0].addEventListener("click", function() {
+
+    arrayImgTags[imgPosition].classList.remove("active");
+    imgPosition--;
+    arrayImgTags[imgPosition].classList.add("active");
+
+});
+
+// STATO INTERMEDIO
+// arrayImgTags[x].classList.remove("active");
+// x++;
+// arrayImgTags[x].classList.add("active");
+// up[0].classList.remove("hidden");
+
+// STATO FINALE
+// arrayImgTags[x].classList.remove("active");
+// x++;
+// arrayImgTags[x].classList.add("active");
+// down[0].classList.add("hidden");
+
+
+
+
+
