@@ -41,36 +41,46 @@ const arrayImgs = ["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.j
 
 const carousel = document.getElementById("carousel");
 
+const thumbnails = document.getElementById("thumbnails");
+
 for(let i = 0; i < arrayImgs.length; i++) {
 
-    carousel.innerHTML += `<img class="carousel-img" src="${arrayImgs[i]}" alt=""></img>`;
+    carousel.innerHTML += `<img class="carousel-img" src="${arrayImgs[i]}" alt="Image ${i+1}"></img>`;
+    thumbnails.innerHTML += `<img class="thumbnail-img" src="${arrayImgs[i]}" alt="Thumbnail ${i+1}"></img>`;
 
 }
 
 const arrayImgTags = document.getElementsByClassName("carousel-img");
+const arrayThumbTags = document.getElementsByClassName("thumbnail-img");
+
 const up = document.getElementsByClassName("up");
 const down = document.getElementsByClassName("down");
 
 // STATO INIZIALE
 arrayImgTags[0].classList.add("active");
-//up[0].classList.add("hidden");
+arrayThumbTags[0].classList.add("active");
 
 let imgPosition = 0;
 
 down[0].addEventListener("click", function() {
 
     arrayImgTags[imgPosition].classList.remove("active");
+    arrayThumbTags[imgPosition].classList.remove("active");
     imgPosition++;
     if(imgPosition >= arrayImgTags.length) {
         imgPosition = 0;
-    } 
+    }
+
     arrayImgTags[imgPosition].classList.add("active");
+
+    arrayThumbTags[imgPosition].classList.add("active");
 
 });
 
 up[0].addEventListener("click", function() {
 
     arrayImgTags[imgPosition].classList.remove("active");
+    arrayThumbTags[imgPosition].classList.remove("active");
     console.log("Posizione", imgPosition);
     imgPosition--;
     console.log("Posizione", imgPosition);
@@ -80,7 +90,10 @@ up[0].addEventListener("click", function() {
         console.log("ENTRATO NELL'IF","Posizione", imgPosition);
 
     }
+
     arrayImgTags[imgPosition].classList.add("active");
+
+    arrayThumbTags[imgPosition].classList.add("active");
 
 });
 
