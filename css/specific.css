@@ -79,13 +79,15 @@ img {
 
     height: calc(800px / 5);
     object-fit: cover;
+    opacity: 0.5;
 
 }
 
 .thumbnail-img.active {
 
-    transform: scale(0.9);
+    
     border: 2px solid greenyellow;
+    opacity: 1;
 
 }
 
