@@ -11,14 +11,63 @@
 /*------COMMON PARTS------*/
 
 /*------SPECIFIED PARTS BY ID------*/
-.primo {
+img {
 
-    background-color: var(--bg-color-primo);
+    width: 100%;
 
 }
 
-.secondo {
+#carousel {
 
-    background-color: var(--bg-color-secondo);
+    position: relative;
+
+}
+
+.carousel-img {
+
+    display: none;
+
+}
+
+.active {
+
+    display: block;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
+
+.up,
+.down {
+
+    position: absolute;
+    left:50%;
+    transform: translateY(-50%);
+    background-color: rgba(127, 127, 127, 0.5);
+    border-radius: 50%;
+
+}
+
+.up:hover,
+.down:hover {
+
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.up {
+
+    top: 40px;
+
+}
+
+.down {
+
+    bottom: 10px;
 
 }
