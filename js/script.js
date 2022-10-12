@@ -50,9 +50,6 @@ for(let i = 0; i < arrayImgs.length; i++) {
 const arrayImgTags = document.getElementsByClassName("carousel-img");
 const up = document.getElementsByClassName("up");
 const down = document.getElementsByClassName("down");
-console.log(arrayImgTags);
-console.log(up);
-console.log(down);
 
 // STATO INIZIALE
 arrayImgTags[0].classList.add("active");
@@ -64,6 +61,9 @@ down[0].addEventListener("click", function() {
 
     arrayImgTags[imgPosition].classList.remove("active");
     imgPosition++;
+    if(imgPosition >= arrayImgTags.length) {
+        imgPosition = 0;
+    } 
     arrayImgTags[imgPosition].classList.add("active");
 
 });
@@ -71,7 +71,15 @@ down[0].addEventListener("click", function() {
 up[0].addEventListener("click", function() {
 
     arrayImgTags[imgPosition].classList.remove("active");
+    console.log("Posizione", imgPosition);
     imgPosition--;
+    console.log("Posizione", imgPosition);
+    if(imgPosition < 0) {
+
+        imgPosition = arrayImgTags.length - 1;
+        console.log("ENTRATO NELL'IF","Posizione", imgPosition);
+
+    }
     arrayImgTags[imgPosition].classList.add("active");
 
 });
