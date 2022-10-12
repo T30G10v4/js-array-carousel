@@ -71,6 +71,7 @@ down[0].addEventListener("click", function() {
         imgPosition = 0;
     }
 
+    console.log("Posizione", imgPosition);
     arrayImgTags[imgPosition].classList.add("active");
 
     arrayThumbTags[imgPosition].classList.add("active");
@@ -81,16 +82,17 @@ up[0].addEventListener("click", function() {
 
     arrayImgTags[imgPosition].classList.remove("active");
     arrayThumbTags[imgPosition].classList.remove("active");
-    console.log("Posizione", imgPosition);
+    
     imgPosition--;
-    console.log("Posizione", imgPosition);
+    
     if(imgPosition < 0) {
 
         imgPosition = arrayImgTags.length - 1;
-        console.log("ENTRATO NELL'IF","Posizione", imgPosition);
+        
 
     }
 
+    console.log("Posizione", imgPosition);
     arrayImgTags[imgPosition].classList.add("active");
 
     arrayThumbTags[imgPosition].classList.add("active");
